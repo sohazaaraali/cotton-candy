@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Request Quote | Cotton Candy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Cotton Candy</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="flavors.html">Flavors</a>
+    <a href="order.html">Order</a>
+    <a href="quote.html">Request Quote</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<section class="quote-section">
+  <h2>Request a Quote</h2>
+  <form id="quoteForm" class="order-form">
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Parent Email" required>
+    <textarea name="details" placeholder="Event Details"></textarea>
+    <button class="primary-btn" type="submit">Submit Request</button>
+  </form>
+</section>
+
+<script>
+document.getElementById("quoteForm").onsubmit = async (e) => {
+  e.preventDefault();
+  alert("Quote request submitted! We will contact you shortly.");
+  e.target.reset();
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "dotenv": "^17.2.3",
+    "mailersend": "^2.6.0"
+  },
+  "name": "cotton-candy-site",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cotton Candy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohazaaraali/cotton-candy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sohazaaraali/cotton-candy/issues"
+  },
+  "homepage": "https://github.com/sohazaaraali/cotton-candy#readme"
+}

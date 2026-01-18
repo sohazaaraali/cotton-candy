@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sugar Swirls by Soha - Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ---------- Navbar ---------- -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="order.html">Order</a>
+      <a href="quote.html">Request Quote</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- ---------- Page Title ---------- -->
+  <h1>Order Your Cotton Candy!</h1>
+
+  <!-- ---------- Order Form ---------- -->
+  <form id="orderForm">
+    <input type="text" name="firstName" placeholder="First Name" required />
+    <input type="email" name="parentEmail" placeholder="Parent Email" required />
+
+    <label>Flavors & Quantities:</label>
+
+    <div class="flavor-row">
+      <span>Pink Vanilla</span>
+      <input type="number" min="0" name="pinkVanilla" placeholder="0">
+    </div>
+
+    <div class="flavor-row">
+      <span>Blue Raspberry</span>
+      <input type="number" min="0" name="blueRaspberry" placeholder="0">
+    </div>
+
+    <div class="flavor-row">
+      <span>Strawberry</span>
+      <input type="number" min="0" name="strawberry" placeholder="0">
+    </div>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <!-- ---------- JavaScript ---------- -->
+  <script>
+  document.getElementById("orderForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    // Build flavors object
+    const flavors = {
+      "Pink Vanilla": parseInt(form.pinkVanilla.value) || 0,
+      "Blue Raspberry": parseInt(form.blueRaspberry.value) || 0,
+      "Strawberry": parseInt(form.strawberry.value) || 0
+    };
+
+    // Remove zero-quantity flavors
+    const selectedFlavors = Object.entries(flavors)
+      .filter(([_, qty]) => qty > 0)
+      .map(([name, qty]) => `${name}: ${qty}`)
+      .join("\n");
+
+    if (!selectedFlavors) {
+      alert("Please select at least one flavor.");
+      return;
+    }
+
+    const firstName = form.firstName.value;
+    const parentEmail = form.parentEmail.value;
+
+    // Prepare email details
+    const subject = encodeURIComponent(`Cotton Candy Order from ${firstName}`);
+    const body = encodeURIComponent(
+      `Hello Sugar Swirls Team,\n\n` +
+      `Order from: ${firstName}\n` +
+      `Parent Email: ${parentEmail}\n\n` +
+      `Flavors & Quantities:\n${selectedFlavors}\n\nThank you!`
+    );
+
+    // Open default email client
+    window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
+  });
+  </script>
+</body>
+</html>
