@@ -30,63 +30,187 @@
 
 <section class="order-section">
   <h2 class="section-title fade-in">Order Your Cotton Candy! 🍭</h2>
-  <p class="section-subtitle fade-in">Pick your flavors, tell us when, and we'll have them ready for you!</p>
+  <p class="section-subtitle fade-in">Pick your flavors, tell us when, and we'll have them ready!</p>
 
-  <form id="orderForm" class="styled-form order-form fade-in">
-    <label for="firstName">Your Name</label>
-    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+  <!-- Step Indicator -->
+  <div class="order-steps fade-in">
+    <div class="step active" data-step="1">
+      <div class="step-circle">1</div>
+      <span>Pick Flavors</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step" data-step="2">
+      <div class="step-circle">2</div>
+      <span>Your Details</span>
+    </div>
+  </div>
 
-    <label for="parentEmail">Parent Email</label>
-    <input type="email" id="parentEmail" name="parentEmail" placeholder="parent@email.com" required>
+  <form id="orderForm" autocomplete="off">
 
-    <label for="phoneNumber">Phone Number <span style="color:#aaa;font-weight:400;">(optional)</span></label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(512) 555-1234">
+    <!-- Step 1: Flavor Picker -->
+    <div class="order-step-panel active" id="step1">
+      <h3 class="step-heading">Choose Your Flavors</h3>
+      <p class="step-desc">Tap <strong>+</strong> to add cones. Each cone is <strong>$3</strong>.</p>
 
-    <label for="orderDate">Order Date</label>
-    <input type="date" id="orderDate" name="orderDate" required>
+      <div class="flavor-picker-grid">
 
-    <label>Flavors & Quantities:</label>
+        <div class="flavor-pick-card" data-flavor="pinkVanilla">
+          <div class="fpc-img">
+            <img src="images/PinkVanilla.png" alt="Pink Vanilla">
+          </div>
+          <div class="fpc-name">Pink Vanilla</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
 
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🩷</span> Pink Vanilla</span>
-      <input type="number" min="0" name="pinkVanilla" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">💙</span> Blue Raspberry</span>
-      <input type="number" min="0" name="blueRaspberry" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🍓</span> Strawberry</span>
-      <input type="number" min="0" name="strawberry" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🍌</span> Banana</span>
-      <input type="number" min="0" name="banana" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🎂</span> Birthday Cake</span>
-      <input type="number" min="0" name="birthdayCake" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🍉</span> Watermelon</span>
-      <input type="number" min="0" name="watermelon" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🍒</span> Cherry</span>
-      <input type="number" min="0" name="cherry" value="0">
-    </div>
-    <div class="flavor-row">
-      <span><span class="flavor-emoji">🍇</span> Grape</span>
-      <input type="number" min="0" name="grape" value="0">
+        <div class="flavor-pick-card" data-flavor="blueRaspberry">
+          <div class="fpc-img">
+            <img src="images/BlueRaspberry.png" alt="Blue Raspberry">
+          </div>
+          <div class="fpc-name">Blue Raspberry</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="strawberry">
+          <div class="fpc-img">
+            <img src="images/Strawberry.png" alt="Strawberry">
+          </div>
+          <div class="fpc-name">Strawberry</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="banana">
+          <div class="fpc-img">
+            <img src="images/Banana.png" alt="Banana">
+          </div>
+          <div class="fpc-name">Banana</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="birthdayCake">
+          <div class="fpc-img">
+            <img src="images/BirthdayCake.png" alt="Birthday Cake">
+          </div>
+          <div class="fpc-name">Birthday Cake</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="watermelon">
+          <div class="fpc-img">
+            <img src="images/Watermelon.png" alt="Watermelon">
+          </div>
+          <div class="fpc-name">Watermelon</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="cherry">
+          <div class="fpc-img">
+            <img src="images/Cherry.png" alt="Cherry">
+          </div>
+          <div class="fpc-name">Cherry</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+        <div class="flavor-pick-card" data-flavor="grape">
+          <div class="fpc-img">
+            <img src="images/Grape.png" alt="Grape">
+          </div>
+          <div class="fpc-name">Grape</div>
+          <div class="fpc-price">$3</div>
+          <div class="fpc-stepper">
+            <button type="button" class="stepper-btn minus" aria-label="Remove one">−</button>
+            <span class="stepper-count">0</span>
+            <button type="button" class="stepper-btn plus" aria-label="Add one">+</button>
+          </div>
+        </div>
+
+      </div>
+
+      <button type="button" class="primary-btn next-step-btn" id="toStep2">
+        Continue to Details →
+      </button>
     </div>
 
-    <div id="orderTotal" style="text-align:center;font-size:1.1rem;font-weight:600;color:#e84d8a;padding:8px 0;">
-      Total: $0 (0 cones)
+    <!-- Step 2: Contact Details -->
+    <div class="order-step-panel" id="step2">
+      <h3 class="step-heading">Your Details</h3>
+      <p class="step-desc">Almost there! Just a few quick details.</p>
+
+      <div class="detail-form-grid">
+        <div class="form-field">
+          <label for="firstName">Your Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="parentEmail">Parent Email</label>
+          <input type="email" id="parentEmail" name="parentEmail" placeholder="parent@email.com" required>
+        </div>
+
+        <div class="form-field">
+          <label for="phoneNumber">Phone <span class="optional-tag">optional</span></label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(512) 555-1234">
+        </div>
+
+        <div class="form-field">
+          <label for="orderDate">Pickup Date</label>
+          <input type="date" id="orderDate" name="orderDate" required>
+        </div>
+      </div>
+
+      <!-- Order Review -->
+      <div class="order-review" id="orderReview"></div>
+
+      <div class="step2-buttons">
+        <button type="button" class="secondary-btn back-step-btn" id="backToStep1">← Back</button>
+        <button type="submit" class="primary-btn">Place Order 🎉</button>
+      </div>
     </div>
 
-    <button type="submit" class="form-submit-btn">Place Order 🎉</button>
   </form>
 </section>
+
+<!-- Sticky Summary Bar -->
+<div class="sticky-summary" id="stickySummary">
+  <div class="sticky-summary-inner">
+    <span class="summary-cones" id="summaryCones">0 cones</span>
+    <span class="summary-total" id="summaryTotal">$0</span>
+  </div>
+</div>
 
 <!-- Success toast -->
 <div class="success-toast" id="successToast">✅ Order submitted! Check your email app to send.</div>
@@ -117,64 +241,146 @@
 </footer>
 
 <script>
+/* ---- Hamburger ---- */
 function toggleMenu() {
   document.querySelector('.hamburger').classList.toggle('active');
   document.querySelector('.nav-links').classList.toggle('open');
 }
 
-// Scroll animations
+/* ---- Scroll animations ---- */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Live total calculation
-const pricePerCone = 3;
-const flavorInputs = document.querySelectorAll('.flavor-row input[type="number"]');
-flavorInputs.forEach(input => {
-  input.addEventListener('input', updateTotal);
+/* ---- Flavor data ---- */
+const PRICE = 3;
+const flavorNames = {
+  pinkVanilla: 'Pink Vanilla',
+  blueRaspberry: 'Blue Raspberry',
+  strawberry: 'Strawberry',
+  banana: 'Banana',
+  birthdayCake: 'Birthday Cake',
+  watermelon: 'Watermelon',
+  cherry: 'Cherry',
+  grape: 'Grape'
+};
+const quantities = {};
+Object.keys(flavorNames).forEach(k => quantities[k] = 0);
+
+/* ---- Stepper buttons ---- */
+document.querySelectorAll('.flavor-pick-card').forEach(card => {
+  const flavor = card.dataset.flavor;
+  const countEl = card.querySelector('.stepper-count');
+  const minusBtn = card.querySelector('.minus');
+  const plusBtn = card.querySelector('.plus');
+
+  plusBtn.addEventListener('click', () => {
+    quantities[flavor]++;
+    countEl.textContent = quantities[flavor];
+    card.classList.toggle('selected', quantities[flavor] > 0);
+    updateSummary();
+  });
+
+  minusBtn.addEventListener('click', () => {
+    if (quantities[flavor] > 0) {
+      quantities[flavor]--;
+      countEl.textContent = quantities[flavor];
+      card.classList.toggle('selected', quantities[flavor] > 0);
+      updateSummary();
+    }
+  });
 });
 
-function updateTotal() {
-  let total = 0;
-  flavorInputs.forEach(input => { total += parseInt(input.value) || 0; });
-  document.getElementById('orderTotal').textContent =
-    `Total: $${total * pricePerCone} (${total} cone${total !== 1 ? 's' : ''})`;
+/* ---- Sticky summary bar ---- */
+function updateSummary() {
+  const total = Object.values(quantities).reduce((a, b) => a + b, 0);
+  document.getElementById('summaryCones').textContent = `${total} cone${total !== 1 ? 's' : ''}`;
+  document.getElementById('summaryTotal').textContent = `$${total * PRICE}`;
+
+  const bar = document.getElementById('stickySummary');
+  if (total > 0) {
+    bar.classList.add('visible');
+  } else {
+    bar.classList.remove('visible');
+  }
 }
 
-// Form submission
-document.getElementById("orderForm").addEventListener("submit", (e) => {
+/* ---- Step navigation ---- */
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+const stepIndicators = document.querySelectorAll('.order-steps .step');
+const stepLine = document.querySelector('.step-line');
+
+document.getElementById('toStep2').addEventListener('click', () => {
+  const total = Object.values(quantities).reduce((a, b) => a + b, 0);
+  if (total === 0) {
+    alert('Please add at least one cone! 🍭');
+    return;
+  }
+  step1.classList.remove('active');
+  step2.classList.add('active');
+  stepIndicators[0].classList.remove('active');
+  stepIndicators[0].classList.add('done');
+  stepIndicators[1].classList.add('active');
+  stepLine.classList.add('done');
+  buildReview();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+document.getElementById('backToStep1').addEventListener('click', () => {
+  step2.classList.remove('active');
+  step1.classList.add('active');
+  stepIndicators[1].classList.remove('active');
+  stepIndicators[0].classList.remove('done');
+  stepIndicators[0].classList.add('active');
+  stepLine.classList.remove('done');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ---- Build review summary ---- */
+function buildReview() {
+  const review = document.getElementById('orderReview');
+  const selected = Object.entries(quantities).filter(([_, q]) => q > 0);
+  const totalCones = selected.reduce((s, [_, q]) => s + q, 0);
+
+  let html = '<h4>Order Summary</h4><div class="review-items">';
+  selected.forEach(([key, qty]) => {
+    html += `<div class="review-item">
+      <span>${flavorNames[key]}</span>
+      <span class="review-qty">×${qty} = $${qty * PRICE}</span>
+    </div>`;
+  });
+  html += `</div>
+    <div class="review-total">
+      <span>Total</span>
+      <span>${totalCones} cone${totalCones !== 1 ? 's' : ''} — <strong>$${totalCones * PRICE}</strong></span>
+    </div>`;
+  review.innerHTML = html;
+}
+
+/* ---- Form submission ---- */
+document.getElementById('orderForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const form = e.target;
 
-  const flavors = {
-    "Pink Vanilla": parseInt(form.pinkVanilla.value) || 0,
-    "Blue Raspberry": parseInt(form.blueRaspberry.value) || 0,
-    "Strawberry": parseInt(form.strawberry.value) || 0,
-    "Banana": parseInt(form.banana.value) || 0,
-    "Birthday Cake": parseInt(form.birthdayCake.value) || 0,
-    "Watermelon": parseInt(form.watermelon.value) || 0,
-    "Cherry": parseInt(form.cherry.value) || 0,
-    "Grape": parseInt(form.grape.value) || 0,
-  };
-
-  const selectedFlavors = Object.entries(flavors)
-    .filter(([_, qty]) => qty > 0)
-    .map(([name, qty]) => `  ${name}: ${qty}`)
-    .join("\n");
-
-  if (!selectedFlavors) {
-    alert("Please select at least one flavor! 🍭");
+  const selected = Object.entries(quantities).filter(([_, q]) => q > 0);
+  if (selected.length === 0) {
+    alert('Please select at least one flavor! 🍭');
     return;
   }
 
-  const totalCones = Object.values(flavors).reduce((a, b) => a + b, 0);
-  const totalPrice = totalCones * pricePerCone;
+  const totalCones = selected.reduce((s, [_, q]) => s + q, 0);
+  const totalPrice = totalCones * PRICE;
 
   const firstName = form.firstName.value;
   const parentEmail = form.parentEmail.value;
-  const phoneNumber = form.phoneNumber.value || "Not provided";
+  const phoneNumber = form.phoneNumber.value || 'Not provided';
   const orderDate = form.orderDate.value;
+
+  const flavorList = selected
+    .map(([key, qty]) => `  ${flavorNames[key]}: ${qty}`)
+    .join('\n');
 
   const subject = encodeURIComponent(`Cotton Candy Order from ${firstName}`);
   const body = encodeURIComponent(
@@ -183,17 +389,15 @@ document.getElementById("orderForm").addEventListener("submit", (e) => {
     `Parent Email: ${parentEmail}\n` +
     `Phone: ${phoneNumber}\n` +
     `Requested Date: ${orderDate}\n\n` +
-    `Flavors & Quantities:\n${selectedFlavors}\n\n` +
+    `Flavors & Quantities:\n${flavorList}\n\n` +
     `Total: ${totalCones} cones = $${totalPrice}\n\n` +
     `Thank you!`
   );
 
-  // Show success toast
   const toast = document.getElementById('successToast');
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 4000);
 
-  // Open email client
   window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
 });
 </script>
