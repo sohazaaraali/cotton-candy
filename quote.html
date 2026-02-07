@@ -32,37 +32,54 @@
   <h2 class="section-title fade-in">Request a Quote 🎉</h2>
   <p class="section-subtitle fade-in">Planning an event? Tell us the details and we'll put together a custom package for you!</p>
 
-  <form id="quoteForm" class="styled-form order-form fade-in">
-    <label for="quoteName">Your Name</label>
-    <input type="text" id="quoteName" name="name" placeholder="Your Name" required>
+  <form id="quoteForm" class="quote-form-card fade-in" autocomplete="off">
 
-    <label for="quoteEmail">Parent Email</label>
-    <input type="email" id="quoteEmail" name="email" placeholder="parent@email.com" required>
+    <div class="quote-form-grid">
+      <div class="form-field">
+        <label for="quoteName">Your Name</label>
+        <input type="text" id="quoteName" name="name" placeholder="First Name" required>
+      </div>
 
-    <label for="quotePhone">Phone Number <span style="color:#aaa;font-weight:400;">(optional)</span></label>
-    <input type="tel" id="quotePhone" name="phone" placeholder="(512) 555-1234">
+      <div class="form-field">
+        <label for="quoteEmail">Parent Email</label>
+        <input type="email" id="quoteEmail" name="email" placeholder="parent@email.com" required>
+      </div>
 
-    <label for="eventDate">Event Date</label>
-    <input type="date" id="eventDate" name="eventDate">
+      <div class="form-field">
+        <label for="quotePhone">Phone <span class="optional-tag">optional</span></label>
+        <input type="tel" id="quotePhone" name="phone" placeholder="(512) 555-1234">
+      </div>
 
-    <label for="guestCount">Estimated Number of Guests</label>
-    <input type="number" id="guestCount" name="guestCount" min="1" placeholder="e.g. 50">
+      <div class="form-field">
+        <label for="eventDate">Event Date</label>
+        <input type="date" id="eventDate" name="eventDate">
+      </div>
 
-    <label for="eventType">Event Type</label>
-    <select id="eventType" name="eventType" style="padding:14px 16px;border-radius:12px;border:2px solid #f0e0ea;font-size:1rem;font-family:inherit;">
-      <option value="">Select event type...</option>
-      <option value="birthday">Birthday Party</option>
-      <option value="school">School Event</option>
-      <option value="fair">Fair / Festival</option>
-      <option value="wedding">Wedding</option>
-      <option value="corporate">Corporate Event</option>
-      <option value="other">Other</option>
-    </select>
+      <div class="form-field">
+        <label for="guestCount">Estimated Guests</label>
+        <input type="number" id="guestCount" name="guestCount" min="1" placeholder="e.g. 50">
+      </div>
 
-    <label for="quoteDetails">Additional Details</label>
-    <textarea id="quoteDetails" name="details" placeholder="Tell us about your event — theme, colors, any special requests..."></textarea>
+      <div class="form-field">
+        <label for="eventType">Event Type</label>
+        <select id="eventType" name="eventType">
+          <option value="">Select event type...</option>
+          <option value="birthday">Birthday Party</option>
+          <option value="school">School Event</option>
+          <option value="fair">Fair / Festival</option>
+          <option value="wedding">Wedding</option>
+          <option value="corporate">Corporate Event</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
 
-    <button type="submit" class="form-submit-btn">Submit Request ✨</button>
+    <div class="form-field form-field-full">
+      <label for="quoteDetails">Additional Details</label>
+      <textarea id="quoteDetails" name="details" placeholder="Tell us about your event — theme, colors, any special requests..."></textarea>
+    </div>
+
+    <button type="submit" class="primary-btn quote-submit-btn">Submit Request ✨</button>
   </form>
 </section>
 

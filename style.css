@@ -729,6 +729,72 @@ form.styled-form label { font-weight: 600; margin-top: 4px; display: block; colo
   font-size: 1rem;
 }
 
+/* ---------- Quote Form ---------- */
+.quote-form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 36px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.quote-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.quote-form-card .form-field-full {
+  text-align: left;
+  margin-bottom: 18px;
+}
+.quote-form-card textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #f0e0ea;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  height: 110px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.quote-form-card textarea:focus {
+  border-color: #e84d8a;
+  box-shadow: 0 0 0 3px rgba(232,77,138,0.1);
+}
+.quote-form-card select {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 2px solid #f0e0ea;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.quote-form-card select:focus {
+  border-color: #e84d8a;
+  box-shadow: 0 0 0 3px rgba(232,77,138,0.1);
+}
+.quote-submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+}
+
 /* ---------- Sticky Summary Bar ---------- */
 .sticky-summary {
   position: fixed;
@@ -880,6 +946,8 @@ h2 { text-align: center; color: #e84d8a; font-size: 2.4rem; font-weight: 700; }
   .flavor-cards { grid-template-columns: 1fr; }
   .flavor-picker-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .detail-form-grid { grid-template-columns: 1fr; }
+  .quote-form-grid { grid-template-columns: 1fr; }
+  .quote-form-card { margin: 0 12px; padding: 24px; }
   .step2-buttons { flex-direction: column; }
   .sticky-summary-inner { margin: 0 12px 12px; padding: 12px 20px; font-size: 0.9rem; }
 }
